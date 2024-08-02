@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt">
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> {% block title %}{% endblock %}</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-       <nav>
-        <a href"/" >Home Page</a>
-        <a href"/contato" >Contato</a>
-        <a href"/produtos" >Produtos</a>
-       </nav>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>{% block titulo %}{% endblock %}</title> 
+</head>
+<body>
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/contato">Contato</a>
+        <a href="/produtos">Produtos</a>
+    </nav>
 
-       
-       {% block content %}
-       {% endblock %}
+    {% block content %}
+    {% endblock %}
 
+    {% block rodape %} 
+    <footer>
+        <p>_________________________________________________</p>
+        <p>Desenvolvido por Débora Sabongi em 2024.</p>
+        <nav>
+            <a href="/termos-de-uso">Termos de Uso</a>
+            <a href="/politicas-de-privacidade">Politicas de privacidade</a>
+            <a href="/como-utilizar">Como Utilizar</a>
+        </nav>
+    </footer>
+    {% endblock %}
 
-        {% for produto in produtos %}
-        <h2>{{ produto.nome}}</h2>
-        <p>{{ produto.descricao}}</p>
-        {% endfor %}
-
-        
-
-        {% block content %}
-        <footer>
-            <p>Desenvolvido por Debs e Alison</p>
-        </footer>
-        {% endblock %}
-
-
-        
-        <script src="" async defer></script>
-    </body>
-</html>
+</body>
+</html> 
