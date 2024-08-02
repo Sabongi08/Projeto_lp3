@@ -50,20 +50,19 @@ def termos():
 def politica():
     return render_template("politicas.html")
 
-
 @app.route("/como-utilizar")
 def utilizar():
     return render_template("utilizar.html")
 
 @app.route("/cpf")
-def gerarCpf():
-    cpf = CPF() 
-    return cpf.generate(True)
+def gcpf():
+    vcpf = cpf.generate(True)
+    return render_template("cpf.html", cpf = vcpf)
 
 @app.route("/cnpj")
-def gerarCnpj():
-    cnpj = CNPJ() 
-    return cnpj.generate(True)
+def gcnpj():
+    vcnpj = cnpj.generate(True)
+    return render_template("cnpj.html", cnpj = vcnpj)
 
 @app.route("/produtos/cadastro")
 def cadastro_produto():
