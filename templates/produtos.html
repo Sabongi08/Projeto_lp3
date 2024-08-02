@@ -1,14 +1,35 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+</head>
+<body>
 
-{% block title %}Produtos{% endblock %}
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/contato">Contato</a>
+        <a href="/produtos">Produtos</a>
+    </nav>
 
-{% block content %}
-       
-        <h1> Nossos Produtos</h1>
-        <p> Confira nossos produtos</p>
-        {% for produto in produtos %}
-        <h2>{{ produto.nome}}</h2>
-        <p>{{ produto.descricao}}</p>
-        {% endfor %}
+    
+    <h1>Nossos produtos</h1>
+    <p>Confira nossos produtos</p>
 
-{% endblock %}
+    {% for produto in produtos %}
+    <h2>{{produto.nome}}</h2>
+    <p>{{produto.descricao}}</p>
+    <img src="{{produto.imagem}}" alt="">
+
+    {% endfor %}
+    
+</body>
+
+    <footer>
+        <p>_________________________________________________</p>
+        <p>Desenvolvido por Débora Sabongi em 2024.</p>
+    </footer>
+
+</html>
